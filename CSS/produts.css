@@ -107,3 +107,77 @@ h2{
     font-family: "Ubuntu", sans-serif;
 
 } 
+
+/* Footer styling */
+
+.footer {
+    background-color: rgba(16, 91, 229, 0.86);
+    display: flex;
+    justify-content: center;
+    padding: 53px;
+    color: #fff;
+  }
+  
+  .footerText {
+    margin-inline: 85px;
+  }
+  
+  .footerText p {
+    margin-top: 11px;
+    color: beige;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  
+  
+  footer {
+    font-size: 0.95rem;
+    background-color: rgba(16, 91, 229, 0.86);
+    color: beige;
+    padding: 2rem 0;
+  }
+  
+  .footerflex {
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+  }
+  
+  .footerText {
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  footer h2 {
+    color: #fff;
+    padding-bottom: .7rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  
+  #last {
+    border-top: 1px solid #777;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    color: #fff;
+  }
+  
+  @media (max-width:700px) {
+    .footerflex {
+      display: block;
+    }
+
+    .footerText p{
+        max-width: 20rem;
+    }
+  }
