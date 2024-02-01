@@ -51,6 +51,11 @@ display: none;
 }  
 #toggleMenuBar{
     display: none;
+    background-color:rgba(16, 91, 229, 0.86);
+    font-size: 30px;
+    border: 1px solid rgba(16, 91, 229, 0.86);
+    border-radius: 5px;
+    color: white;
 }
 
 @media screen and (max-width: 600px){
@@ -61,3 +66,44 @@ display: none;
         display: block;
     }
 }
+/* STYLING DONE BY FAITH */
+h2{
+    color:rgba(16, 91, 229, 0.86);
+}
+.category {
+    background-color: rgba(16, 91, 229, 0.86);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: capitalize;
+    color: #f8f8f8;
+
+    
+}
+
+.category:hover {
+    background-color: #e0e0e0;
+    color: rgba(16, 91, 229, 0.86);
+}
+
+.allProduct a{
+    text-decoration: none;
+    margin: 8rem; 
+    font-size: 18px;
+    background-color: rgba(16, 91, 229, 0.86);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #f8f8f8;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+
+} 
