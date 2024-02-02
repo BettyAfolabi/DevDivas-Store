@@ -15,7 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&family=Satisfy&display=swap"
       rel="stylesheet"
     />
-    <!-- end of google font code -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./CSS/products.css" />
   </head>
   <body>
@@ -35,15 +38,53 @@
         <h1 class="title">DevDivas Store</h1>
       </div>
     </div>
-
-    <div id="categories"><a href="#">All</a></div>
+    <div class="categories">
+      <a href="#" id="allProducts" class="displayAll">All</a>
+      <div class="menuBar">
+        <div id="categories"><a href="#" id="allProducts">All</a></div>
+        <button id="toggleMenuBar">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAExJREFUSEtjZKAxYKSx+QyjFhAM4QEJov8EnYVfAYqjsfmA5hZQ6AFU7QMSBzT3Ac3jgOYW0DyIhr4FNI8Dmlsw9ONg1AcoIUDz0hQAbegGGXzv/l0AAAAASUVORK5CYII="
+          />
+        </button>
+      </div>
+    </div>
     <section class="container" id="product-container"></section>
 
     <!-- <section class="container" id="product-container"></section> -->
 
     <div>
-      <button id="load-more">Load More</button>
+      <p id="load-more">Load More</p>
     </div>
+
+    <footer>
+      <div class="footerflex">
+        <div class="footerText">
+          <h2>Dev-Divas Store</h2>
+          <p>Opening Hours</p>
+          <p>Mondays-Fridays: 7:00am to 5:00pm</p>
+          <p>Saturdays and Sundays: 10:00am to 6:00pm</p>
+        </div>
+
+        <div class="footerText" id="contact">
+          <h2>Contact Us</h2>
+          <p><i class="fa-brands fa-facebook"> </i> Facebook</p>
+          <p><i class="fa-brands fa-instagram"> </i> Instagram</p>
+          <p><i class="fa-brands fa-twitter"> </i> Twitter</p>
+          <p><i class="fa-brands fa-github"> </i> GitHub</p>
+        </div>
+        <div class="footerText">
+          <h2>Quick Links</h2>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="index.html">About</a></p>
+          <p><a href="products.html">Products</a></p>
+          <p><a href="#">Service</a></p>
+        </div>
+      </div>
+      <p id="last">
+        &copy; 2024 Digital. All Rights Reserved | Developed by DevDivas
+      </p>
+    </footer>
 
     <script src="script.js"></script>
     <script src="script2.js"></script>

@@ -1,3 +1,10 @@
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -84,6 +91,10 @@ nav li a:hover {
     -o-transform: translate(-50%, -50%);
 }
 
+.displayAll {
+    display: none;
+}
+
 #categories {
     display: flex;
     gap: 1.5rem;
@@ -111,6 +122,7 @@ nav li a:hover {
     gap: 20px;
     padding: 20px;
     justify-content: center;
+    align-items: center;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -121,6 +133,7 @@ nav li a:hover {
 .product-info {
     background-color: white;
     margin: 0;
+    margin-bottom: 1.2rem;
     padding: 20px;
     text-align: center;
     border-radius: 20px;
@@ -147,6 +160,13 @@ nav li a:hover {
 
 #load-more {
     margin-top: 20px;
+    background-color: #105be5db;
+    color: #f8f8f8;
+    padding: 10px;
+}
+
+#load-more:hover {
+    background-color: #0f3479db;
 }
 
 #product-title {
@@ -222,15 +242,97 @@ nav li a:hover {
 
 #toggleMenuBar {
     display: none;
+    font-size: 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #105be5db;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
-
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     #categories {
         display: none;
+    }
+
+    .categories {
+        display: flex;
+    }
+
+    .displayAll {
+        display: block;
+        color: #413a3a;
+        font-size: 20px;
+        text-decoration: none;
     }
 
     #toggleMenuBar {
         display: block;
     }
-} */
+}
+
+
+/* Footer styling */
+footer {
+    margin-top: 2rem;
+    background-color: whitesmoke;
+    font-size: 16px;
+    color: black;
+    padding: .7rem;
+    width: 100%;
+}
+
+.footerText p {
+    margin-top: 11px;
+    color: gray;
+    text-align: justify;
+}
+
+.footerflex {
+    /* margin: auto; */
+    width: 75%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 4rem;
+}
+
+footer h2 {
+    padding-bottom: .5rem;
+    font-size: 18px;
+    font-weight: 600;
+    color: #413a3a;
+}
+
+.footerText a {
+    text-decoration: none;
+    color: gray;
+}
+
+.footerText a :hover {
+    color: #105be5db;
+}
+
+
+#last {
+    border-top: 7px solid #f8f8f8;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+@media (max-width:700px) {
+    .footerflex {
+        display: block;
+
+    }
+
+    .footerText {
+        margin-bottom: 2rem;
+    }
+}

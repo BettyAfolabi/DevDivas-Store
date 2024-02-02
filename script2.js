@@ -1,5 +1,29 @@
-// const togglebutton = document.getElementById("toggleMenuBar")
-// const menuBar = document.querySelector(".menuBar")
+// This script handles the toggle button and fetch Category
+
+const toggleButton = document.getElementById("toggleMenuBar");
+const menuBar = document.querySelector(".menuBar");
+const categoriesContainer = document.getElementById("categories");
+
+// Function to toggle the display of the categories
+
+categoriesContainer.style.center = "250px";
+toggleButton.onclick = function () {
+  document.getElementsByClassName("displayAll").style.display = "none";
+  categoriesContainer.style.right =
+    categoriesContainer.style.right === "-250px" ? "0" : "-250px";
+  toggleButton.textContent =
+    categoriesContainer.style.right === "-250px" ? "✕" : "☰";
+};
+
+function toggleCategoriesDisplay() {
+  if (categoriesContainer.style.display === "block") {
+    categoriesContainer.style.display = "none";
+  } else {
+    categoriesContainer.style.display = "block";
+  }
+}
+// Event listener for the toggle button
+toggleButton.addEventListener("click", toggleCategoriesDisplay);
 
 document.addEventListener("DOMContentLoaded", () => {
   const categoriesContainer = document.getElementById("categories");
