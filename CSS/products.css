@@ -5,6 +5,10 @@ html {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -73,6 +77,30 @@ nav ul li>a {
 
 nav li a:hover {
     text-decoration: underline;
+}
+
+.name {
+    display: flex;
+}
+
+nav .name>h1 {
+    font-size: 25px;
+    font-family: "Satisfy", sans-serif;
+    color: white;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 0;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .title {
@@ -150,6 +178,7 @@ nav li a:hover {
 
 #product-image {
     width: 70%;
+    /* object-fit: cover; */
     height: 150px;
     margin: 0;
     padding: 0;
@@ -160,7 +189,7 @@ nav li a:hover {
 
 #load-more {
     margin-top: 20px;
-    background-color: #105be5db;
+    background-color: #413a3a;
     color: #f8f8f8;
     padding: 10px;
 }
