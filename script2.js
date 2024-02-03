@@ -3,16 +3,18 @@
 const toggleButton = document.getElementById("toggleMenuBar");
 const menuBar = document.querySelector(".menuBar");
 const categoriesContainer = document.getElementById("categories");
+const allButton = document.getElementById("allProducts");
 
 // Function to toggle the display of the categories
 
-categoriesContainer.style.center = "250px";
+categoriesContainer.style.center = "200px";
 toggleButton.onclick = function () {
   document.getElementsByClassName("displayAll").style.display = "none";
-  categoriesContainer.style.right =
-    categoriesContainer.style.right === "-250px" ? "0" : "-250px";
-  toggleButton.textContent =
-    categoriesContainer.style.right === "-250px" ? "✕" : "☰";
+  categoriesContainer.style.display = "block";
+  // categoriesContainer.style.right =
+  //   categoriesContainer.style.right === "-200px" ? "0" : "-200px";
+  // toggleButton.textContent = categoriesContainer.style.display = "block";
+  // categoriesContainer.style.right === "-200px" ? "✕" : "☰";
 };
 
 function toggleCategoriesDisplay() {
@@ -32,6 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const res = await fetch("https://fakestoreapi.com/products/categories");
     const categories = await res.json();
     return categories;
+  }
+
+  async function fetchAllProducts() {
+    const res = await fetch("https://fakestoreapi.com/products?limit=12");
+    const products = await res.json();
+    return products;
   }
 
   async function fetchProductsByCategory(category) {
@@ -66,32 +74,45 @@ document.addEventListener("DOMContentLoaded", () => {
     displayProducts(products);
   }
 
+  async function handleAllButtonClick() {
+    const allProducts = await fetchAllProducts();
+    displayProducts(allProducts);
+  }
+
   function displayCategories(categories) {
     categories.forEach((category) => {
-      const catLink = document.createElement("a");
-      catLink.className = "category";
-      catLink.innerText = category;
+      if (category.toLowerCase() !== "all") {
+        const catLink = document.createElement("a");
+        catLink.className = "category";
+        catLink.innerText = category;
 
-      const categoryUrl = `https://fakestoreapi.com/products/${encodeURIComponent(
-        category
-      )}`;
-      catLink.href = categoryUrl;
+        const categoryUrl = `https://fakestoreapi.com/products/${encodeURIComponent(
+          category
+        )}`;
+        catLink.href = categoryUrl;
 
-      catLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        handleCategoryClick(category);
-      });
+        catLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          handleCategoryClick(category);
+        });
 
-      categoriesContainer.appendChild(catLink);
+        categoriesContainer.appendChild(catLink);
+      }
     });
   }
 
-  fetchCategory().then(displayCategories);
+  const allButton = document.createElement("button");
+  allButton.id = "allProducts";
+  allButton.innerText = "All";
+  allButton.addEventListener("click", handleAllButtonClick);
+  categoriesContainer.appendChild(allButton);
+
+  fetchCategory().then((categories) => {
+    categories.unshift("All");
+    displayCategories(categories);
+  });
 });
 
-// togglebutton.addEventListener("click", function(){
-//     menuBar.classList.toggle("block")
-// })
 togglebutton.onclick = function () {
   menuBar.classList.toggle("hidden");
   displayCategories(categories);

@@ -7,6 +7,10 @@
     <title>Dev-Divas E-commerce</title>
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +27,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&family=Satisfy&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./CSS/index.css" />
   </head>
   <body>
@@ -36,13 +44,16 @@
         />
         <h1>DevDivas Store</h1>
       </div>
-      <ul class="navs">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="products.html">Services</a></li>
-        <li><a href="#Contact Us">Contact Us</a></li>
-        <!-- <a href="#"><i class="fa fa-search"></i></a> -->
-      </ul>
+
+      <div class="drop">
+        <button class="dropbtn"><i class="bx bx-menu"></i></button>
+        <ul class="content">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#Contact Us">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container" id="about">
@@ -124,5 +135,34 @@
         </p>
       </div>
     </div>
+
+    <footer>
+      <div class="footerflex">
+        <div class="footerText">
+          <h2>Dev-Divas Store</h2>
+          <p>Opening Hours</p>
+          <p>Mondays-Fridays: 7:00am to 5:00pm</p>
+          <p>Saturdays and Sundays: 10:00am to 6:00pm</p>
+        </div>
+
+        <div class="footerText" id="contact">
+          <h2>Contact Us</h2>
+          <p><i class="fa-brands fa-facebook"> </i> Facebook</p>
+          <p><i class="fa-brands fa-instagram"> </i> Instagram</p>
+          <p><i class="fa-brands fa-twitter"> </i> Twitter</p>
+          <p><i class="fa-brands fa-github"> </i> GitHub</p>
+        </div>
+        <div class="footerText">
+          <h2>Quick Links</h2>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="index.html">About</a></p>
+          <p><a href="products.html">Products</a></p>
+          <p><a href="#">Service</a></p>
+        </div>
+      </div>
+      <p id="last">
+        &copy; 2024 Digital. All Rights Reserved | Developed by DevDivas
+      </p>
+    </footer>
   </body>
 </html>

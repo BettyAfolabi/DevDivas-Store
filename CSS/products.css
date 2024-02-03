@@ -41,17 +41,41 @@ body {
 
 nav {
     display: flex;
-    flex-flow: row wrap;
-    margin: 0;
-    padding: 15px 30px;
+    flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    box-shadow: none;
+    padding: 1.5rem 3rem;
 }
 
-.navs {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    gap: 3.5rem;
+    gap: 1.5rem;
+}
+
+nav li {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li:hover {
+    border-bottom: 1px solid #fff;
+}
+
+nav h1 {
+    font-size: 2rem;
+}
+
+
+nav .name {
+    display: flex;
 }
 
 nav img {
@@ -62,25 +86,6 @@ nav img {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
-
-nav>ul li {
-    list-style: none;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-nav ul li>a {
-    text-decoration: none;
-    color: aliceblue;
-}
-
-nav li a:hover {
-    text-decoration: underline;
-}
-
-.name {
-    display: flex;
 }
 
 nav .name>h1 {
@@ -93,15 +98,21 @@ nav .name>h1 {
     margin-top: 0;
 }
 
-nav img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+.content a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-top: 0;
+    font-weight: 600;
 }
+
+@media (min-width: 701px) {
+    .dropbtn {
+        display: none;
+    }
+
+}
+
 
 .title {
     position: absolute;
@@ -129,18 +140,31 @@ nav img {
     margin: 2rem 0;
 }
 
-#categories a {
+#allProducts, #categories a {
     list-style-type: none;
     text-decoration: none;
     font-size: 16px;
     color: gray;
     padding: 10px;
     text-transform: capitalize;
+    border: none;
+    background-color: #f8f8f8;
 }
 
-#categories a:hover {
+#allProducts:hover, #categories a:hover {
     text-decoration: underline;
     color: #105be5db;
+}
+
+button {
+    outline: none;
+}
+
+.categories {
+    display: flex;
+    gap: 2rem;
+    font-size: 25px;
+    align-items: center;
 }
 
 .container {
@@ -169,11 +193,20 @@ nav img {
     color: black;
     display: block;
     text-transform: capitalize;
+    transition: transform 0.2s ease-in;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     -webkit-border-radius: 20px;
+}
+
+.product-info:hover {
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -o-transform: translateY(-15px);
 }
 
 #product-image {
@@ -189,7 +222,7 @@ nav img {
 
 #load-more {
     margin-top: 20px;
-    background-color: #413a3a;
+    background-color: #105be5db;
     color: #f8f8f8;
     padding: 10px;
 }
@@ -286,6 +319,7 @@ nav img {
         display: none;
     }
 
+
     .categories {
         display: flex;
     }
@@ -343,7 +377,11 @@ footer h2 {
     color: gray;
 }
 
-.footerText a :hover {
+#contact p:hover {
+    color: #105be5db;
+}
+
+.footerText a:hover {
     color: #105be5db;
 }
 
@@ -356,6 +394,78 @@ footer h2 {
 }
 
 @media (max-width:700px) {
+    nav {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: .8rem 1.5rem;
+    }
+
+    .dropbtn {
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        background-color: transparent;
+        font-size: 25px;
+    }
+
+    .drop {
+        position: relative;
+        display: inline-block;
+    }
+
+    .content {
+        display: none;
+        position: absolute;
+        right: 0;
+        z-index: 5;
+        min-width: 150px;
+        background-color: #f2f5f7;
+        color: #2E6FE7;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .content li {
+        display: block;
+        padding: 10px 12px;
+    }
+
+    .content li:hover {
+        border-bottom: none;
+    }
+
+    .content a:hover {
+        border-bottom: #2E6FE7 solid 2px;
+    }
+
+    .content a {
+        color: #2E6FE7;
+    }
+
+    .drop:hover .content {
+        display: block;
+    }
+
+    nav .name h1 {
+        font-size: 24px;
+        padding-top: 12px;
+        padding-left: 9px;
+    }
+
+    nav img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .title {
+        left: 60%;
+    }
+
+    .product-info {
+        margin: 1.2rem;
+        padding: 1rem 3rem;
+    }
+
     .footerflex {
         display: block;
 
